@@ -1,0 +1,17 @@
+{
+  "id": "vi-du-dohoa-am",
+  "creativeId": "MAUAM-P2-E-01",
+  "pillar": "P2",
+  "function": "Educate",
+  "thuongHieu": "mau-am",
+  "loai": "dohoa",
+  "vaiTro": "am",
+  "giong": "macos",
+  "choPhepNgan": true,
+  "ghiChuNgan": "Video mẫu để chạy thử sau khi cài đặt, không đăng",
+  "canh": [
+    {"loi": "Bạn đã ngồi yên bao lâu kể từ lần đứng dậy gần nhất?", "chu": "Lần cuối bạn đứng dậy?"},
+    {"loi": "Hãy thử đặt một lời nhắc nhỏ, mỗi giờ đứng lên và vươn vai một lần.", "chu": "Mỗi giờ, đứng lên một lần"},
+    {"loi": "Đây là một thói quen nhỏ, không thay thế lời khuyên của nhân viên y tế.", "chu": "Bắt đầu từ việc nhỏ"}
+  ]
+}

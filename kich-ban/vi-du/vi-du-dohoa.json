@@ -1,0 +1,18 @@
+{
+  "id": "vi-du-dohoa",
+  "creativeId": "MAU-P2-E-01",
+  "pillar": "P2",
+  "function": "Educate",
+  "thuongHieu": "mau",
+  "loai": "dohoa",
+  "vaiTro": "am",
+  "giong": "macos",
+  "choPhepNgan": true,
+  "ghiChuNgan": "Video mẫu để chạy thử sau khi cài đặt, không đăng",
+  "canh": [
+    {"loi": "Bạn có biết mỗi video ngắn đều có thể bắt đầu từ một câu hỏi?", "chu": "Bắt đầu từ một câu hỏi"},
+    {"loi": "Nhà máy đọc kịch bản, lồng giọng, chép phụ đề và gắn bộ nhận diện thương hiệu.", "chu": "Kịch bản thành video"},
+    {"loi": "Trước khi xuất, máy quét từ cấm theo gói ngành rồi để video chờ người duyệt.", "chu": "Quét từ cấm, chờ duyệt"}
+  ],
+  "cta": {"chu": "Theo dõi kênh để xem phần tiếp theo", "phu": "Video mẫu · không đăng"}
+}

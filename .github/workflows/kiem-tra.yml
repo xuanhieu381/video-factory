@@ -1,0 +1,22 @@
+name: Kiểm tra
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  kiem-tra:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      # QA trên mọi kịch bản trong repo: có lỗi CHẶN chưa được người duyệt ghi ngoại lệ thì báo đỏ
+      - name: QA kịch bản
+        run: |
+          for f in $(find kich-ban -name '*.json'); do node pipeline/san-xuat.mjs qa "$f" || exit 1; done

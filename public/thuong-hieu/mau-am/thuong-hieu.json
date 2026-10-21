@@ -1,0 +1,22 @@
+{
+  "ma": "mau-am",
+  "nganh": "suc-khoe",
+  "tenKenh": "Thương hiệu mẫu ấm",
+  "font": "Montserrat",
+  "mau": {
+    "chinh": "#B45309",
+    "chinhDam": "#7C2D12",
+    "noiBat": "#0F766E",
+    "nen": "#FDF6EC",
+    "trang": "#FFFFFF",
+    "den": "#1C1917",
+    "nenMoDauCuoi": "#F6E7D2",
+    "nenManKetCuoi": "#FBEBD8",
+    "phuDeDangNoi": "#FCD34D",
+    "phuDeDangNoiNong": "#5EEAD4"
+  },
+  "logo": "logo.png",
+  "outro": "video",
+  "outroVideo": "outro.mp4",
+  "ctaMacDinh": {"chu": "Lưu video để thử lại vào ngày mai", "phu": "Thương hiệu mẫu ấm"}
+}

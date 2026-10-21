@@ -1,0 +1,19 @@
+node_modules/
+.env
+
+# Công cụ nặng, cài bằng `npm run cai-dat`
+whisper.cpp/
+
+# Dữ liệu sản xuất: clip nguồn, file trung gian, thành phẩm
+nguon/*
+!nguon/.gitkeep
+public/jobs/
+thanh-pham/*
+!thanh-pham/cho-duyet/
+thanh-pham/cho-duyet/*
+!thanh-pham/cho-duyet/.gitkeep
+
+# Rác hệ điều hành (ổ exFAT trên macOS tự sinh file ._*)
+._*
+.DS_Store
+out/

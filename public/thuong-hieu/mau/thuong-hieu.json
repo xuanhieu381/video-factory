@@ -1,0 +1,21 @@
+{
+  "ma": "mau",
+  "nganh": "chung",
+  "tenKenh": "Thương hiệu mẫu",
+  "font": "BeVietnamPro",
+  "mau": {
+    "chinh": "#1E3A8A",
+    "chinhDam": "#172554",
+    "noiBat": "#F59E0B",
+    "nen": "#F5F7FF",
+    "trang": "#FFFFFF",
+    "den": "#1F1F1F",
+    "nenMoDauCuoi": "#E8ECF8",
+    "nenManKetCuoi": "#EEF2FF",
+    "phuDeDangNoi": "#93C5FD",
+    "phuDeDangNoiNong": "#FFD23F"
+  },
+  "logo": "logo.svg",
+  "outro": "logo",
+  "ctaMacDinh": {"chu": "Theo dõi kênh để xem phần tiếp theo", "phu": "Thương hiệu mẫu"}
+}

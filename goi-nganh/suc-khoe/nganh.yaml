@@ -1,0 +1,157 @@
+# GÓI NGÀNH: SỨC KHỎE
+# Ví dụ đầy đủ một gói ngành rủi ro cao.
+# Dùng chung cho mọi thương hiệu ngành sức khỏe, chăm sóc thể chất, trị liệu không dùng thuốc.
+# Trạng thái: tham khảo. Mức rủi ro, danh sách luật và từ cấm phải được pháp chế của bạn xác nhận trước khi dùng thật.
+
+ma: suc-khoe
+ten: Sức khỏe
+phienBan: 0.1
+
+# A cao · B trung bình · C thấp. A: bắt buộc người duyệt chuyên môn + pháp chế, mỗi claim có nguồn.
+mucRuiRo: A
+
+nguoiDuyet:
+  chuyenMon: Người có chuyên môn y tế / sức khỏe phía thương hiệu
+  phapChe: Pháp chế hoặc người phụ trách tuân thủ quảng cáo
+  phatHanh: Người có thẩm quyền phê duyệt phát hành của thương hiệu
+
+phapLy:
+  - Luật Quảng cáo
+  - Nghị định 342/2025/NĐ-CP (quảng cáo nhóm sản phẩm, dịch vụ được quản lý đặc biệt)
+  - Quy định hiện hành về bảo vệ dữ liệu cá nhân (thông tin sức khỏe là dữ liệu nhạy cảm)
+
+loiHuaTraoNangLuc: Khách hiểu đúng cơ thể mình và tự tin bắt đầu chăm sóc bản thân bằng những bước nhỏ, an toàn.
+
+chucNang:
+  Educate: "Tôi hiểu thêm và biết nên làm gì."
+  Inspire: "Tôi tin mình có thể bắt đầu và tiếp tục."
+tyTrongThuNghiem: {Educate: 60, Inspire: 40}
+
+truCot:
+  P1:
+    ten: Hiểu cơ thể
+    mucTieu: Nâng cao nhận thức về cơ thể, thói quen sinh hoạt và giới hạn của cảm nhận cơ thể
+    viDu:
+      - Vì sao không nên giữ một tư thế quá lâu?
+      - Ba điều cần biết trước khi làm theo lời khuyên sức khỏe trên mạng
+  P2:
+    ten: Kỹ năng tự chăm sóc
+    chuLuc: true
+    mucTieu: Biến kiến thức thành hành động nhỏ, an toàn, duy trì được
+    viDu:
+      - Một phút nhìn lại thói quen ngồi làm việc
+      - Cách đặt lời nhắc đổi tư thế trong ngày
+  P3:
+    ten: Hiểu và lựa chọn giải pháp
+    mucTieu: Đánh giá giải pháp có cơ sở, hiểu lợi ích, điều kiện, giới hạn và khi nào cần gặp nhân viên y tế
+    viDu:
+      - Ba câu hỏi giúp đánh giá một phương pháp chăm sóc sức khỏe
+      - Một trải nghiệm dễ chịu có đồng nghĩa với hiệu quả điều trị không?
+  P4:
+    ten: Hành trình người thật
+    mucTieu: Giá trị của việc học hỏi và duy trì hành vi qua câu chuyện có thật
+    dieuKien: Câu chuyện có thật, nhân vật đồng ý bằng văn bản, không tuyên bố hiệu quả vượt quá bằng chứng
+    viDu:
+      - Một ngày trải nghiệm lớp học
+      - Điều một học viên nhận ra sau khi bắt đầu tìm hiểu về sức khỏe
+
+hoatDongThamGia:
+  nguyenTac: Chỉ hướng dẫn hành động phù hợp đại chúng, có nêu đối tượng cần tránh; rủi ro cao thì chuyển sang giải thích kiến thức
+  viDu:
+    - Tự quan sát tư thế ngồi trong 30 giây
+    - Đặt một lời nhắc đứng dậy mỗi giờ
+
+lanRanhDo:
+  - Không tuyên bố chữa khỏi, điều trị, thay thế chăm sóc y tế
+  - Không coi trải nghiệm tức thì là bằng chứng lâm sàng
+  - Không testimonial giả; câu chuyện giả định phải ghi nhãn rõ
+  - Không Before/After gây hiểu nhầm
+  - Không dùng thông tin sức khỏe cá nhân khi chưa có cơ sở hợp lệ
+  - Không khiến người xem nghĩ tự chăm sóc là không cần bác sĩ
+
+qualifiedLead: Người chủ động để lại thông tin qua kênh hợp lệ, có nhu cầu cụ thể (học, trải nghiệm, trao đổi) và đáp ứng tiêu chí lead do thương hiệu xác lập
+ctaTheoDoAm:
+  cold: Xem, thử hoạt động an toàn, lưu kiến thức
+  engaged: Theo dõi chuỗi, xem phần giải thích tiếp theo
+  interested: Đọc tài liệu, tìm hiểu chương trình, tham gia cộng đồng
+  warm: Đăng ký khóa học hoặc trao đổi với đội ngũ khi có nhu cầu
+
+# ---------- Phần máy đọc: QA trước khi render ----------
+
+# Thiếu trường thì chỉ cảnh báo
+truongBatBuoc: [creativeId, pillar, function]
+truongTheoTruCot:
+  P4: [consentStatus]
+# Trường bắt buộc phải đạt đúng giá trị này; khác đi (dong-y-mieng, chua-co…) thì cảnh báo
+yeuCauGiaTri:
+  consentStatus: [da-ky]
+giaTriHopLe:
+  pillar: [P1, P2, P3, P4]
+  function: [Educate, Inspire]
+
+# muc: chan     → dừng render, trừ khi job có "qaNgoaiLe" do người duyệt ghi
+# muc: canh-bao → vẫn render, ghi vào báo cáo QA cạnh file MP4 để người duyệt soát
+# cum: so khớp theo âm tiết, có dấu, không phân biệt hoa thường
+# mau: biểu thức chính quy chạy trên chữ đã chuẩn hóa (thường, bỏ dấu câu)
+# boQuaKhiTruoc: câu phủ định nếu 5 âm tiết ngay trước có một trong các từ này (vd. "không phải là phương pháp chữa bệnh").
+#   Phủ định thì lỗi "chặn" hạ thành cảnh báo cho người duyệt xem lại, lỗi "cảnh báo" thì bỏ qua.
+tuCam:
+  - muc: chan
+    lyDo: Tuyên bố chữa khỏi bệnh
+    goiY: Nói về hiểu biết, thói quen, cảm nhận cá nhân; không nói kết quả điều trị
+    cum: [chữa khỏi, chữa dứt, trị dứt điểm, dứt điểm, khỏi hẳn, khỏi bệnh, hết bệnh, khỏi hoàn toàn, đặc trị, thần dược]
+    boQuaKhiTruoc: [không, chưa, chẳng]
+
+  - muc: chan
+    lyDo: Tự nhận là phương pháp chữa bệnh
+    goiY: Dùng "chăm sóc", "hỗ trợ thư giãn", "thói quen"; nếu đang phủ định thì viết rõ "không thay thế…"
+    cum: [chữa bệnh, trị bệnh, chữa trị]
+    boQuaKhiTruoc: [không, chưa, chẳng, không phải]
+
+  - muc: chan
+    lyDo: Khiến người xem nghĩ không cần bác sĩ hoặc thuốc
+    goiY: Nhắc người xem hỏi ý kiến nhân viên y tế khi có vấn đề sức khỏe
+    cum: [không cần bác sĩ, không cần đi khám, không cần đi viện, không cần uống thuốc, bỏ thuốc, ngưng thuốc, ngừng thuốc, thay thế thuốc, thay thuốc]
+    boQuaKhiTruoc: [không, đừng, chớ]
+
+  - muc: chan
+    lyDo: Cam kết hiệu quả tuyệt đối
+    goiY: Bỏ con số cam kết; nói "nhiều người chia sẻ…" kèm nhãn trải nghiệm cá nhân
+    cum: [hiệu quả 100, cam kết khỏi, cam kết hiệu quả, an toàn tuyệt đối, không có tác dụng phụ, không tác dụng phụ]
+
+  - muc: chan
+    lyDo: Hứa kết quả tức thì
+    goiY: 'Brief: không nói "Chỉ cần 60 giây là chữa khỏi…"; nói "bắt đầu từ một việc nhỏ"'
+    mau: 'chỉ (cần|mất) \d+ (giây|phút|ngày|buổi) (là|để) (hết|khỏi|lành|chữa)'
+
+  - muc: canh-bao
+    lyDo: Từ ngữ điều trị, người duyệt chuyên môn xem lại ngữ cảnh
+    goiY: Được dùng khi giải thích (P3) hoặc mô tả nghề; không dùng như lời hứa kết quả
+    cum: [điều trị, trị liệu, liệu trình, phác đồ, chữa]
+    boQuaKhiTruoc: [không, chưa]
+
+  - muc: canh-bao
+    lyDo: Kết quả sức khỏe từ trải nghiệm cá nhân, cần nhãn "trải nghiệm cá nhân" và giấy đồng ý
+    goiY: Giữ lời kể thật nhưng thêm nhãn không thay thế tư vấn y tế; không đưa lên hook hay chữ lớn
+    cum: [được cải thiện, cải thiện, hết đau, đỡ đau, giảm đau, khỏi đau, hết tê, đỡ hẳn, khỏe hẳn, hồi phục, lành bệnh]
+    boQuaKhiTruoc: [không, chưa]
+
+  - muc: canh-bao
+    lyDo: Tuyên bố công dụng cần bằng chứng (thường thuộc nhóm quản lý đặc biệt)
+    goiY: Chỉ dùng khi có nguồn trong Claim/Evidence Register và pháp chế duyệt
+    cum: [tăng sức đề kháng, tăng đề kháng, phòng bệnh, ngăn ngừa, phòng ngừa, thải độc, giải độc, detox, giảm cân, trẻ hóa, chống lão hóa, tăng cường miễn dịch]
+
+  - muc: canh-bao
+    lyDo: So sánh tuyệt đối, khó chứng minh
+    goiY: Bỏ hoặc thay bằng mô tả cụ thể có kiểm chứng
+    cum: [tốt nhất, số 1, số một, duy nhất, hàng đầu, 100]
+
+  - muc: canh-bao
+    lyDo: Chuyên gia, bác sĩ đứng ra khuyên dùng
+    goiY: Chuyên gia giải thích kiến thức thì được; không gắn với khuyên dùng sản phẩm, dịch vụ
+    cum: [bác sĩ khuyên, chuyên gia khuyên, được bác sĩ, bác sĩ khuyên dùng]
+
+  - muc: canh-bao
+    lyDo: Dấu hiệu Before/After
+    goiY: Brief cấm Before/After gây hiểu nhầm về hiệu quả
+    cum: [trước và sau, before after, trước sau khi]

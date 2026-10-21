@@ -1,0 +1,94 @@
+# GÓI NGÀNH: CHUNG
+# Lớp tối thiểu cho mọi ngành, đồng thời là khuôn để tạo gói ngành mới:
+#   cp -R goi-nganh/chung goi-nganh/<ma-nganh>  rồi viết lại từng mục.
+# Ngành có rủi ro riêng (sức khỏe, mỹ phẩm, tài chính, bất động sản, giáo dục…) phải có gói riêng
+# và được pháp chế xác nhận trước khi dùng cho khách thật. Xem goi-nganh/suc-khoe làm ví dụ đầy đủ.
+
+ma: chung
+ten: Chung (mọi ngành)
+phienBan: 0.1
+
+# A cao · B trung bình · C thấp. A: bắt buộc người duyệt chuyên môn + pháp chế, mỗi claim có nguồn.
+mucRuiRo: C
+
+nguoiDuyet:
+  chuyenMon: Chủ thương hiệu hoặc người phụ trách nội dung
+  phatHanh: Người có thẩm quyền phê duyệt phát hành
+
+phapLy:
+  - Luật Quảng cáo
+
+# Khách tự làm được điều gì nhờ thương hiệu
+loiHuaTraoNangLuc: "<viết một câu>"
+
+chucNang:
+  Educate: "Tôi hiểu thêm và biết nên làm gì."
+  Inspire: "Tôi tin mình có thể bắt đầu và tiếp tục."
+tyTrongThuNghiem: {Educate: 60, Inspire: 40}
+
+# Bốn trụ cột trung tính ngành; viết lại tên và ví dụ cho ngành cụ thể
+truCot:
+  P1:
+    ten: Hiểu vấn đề
+    mucTieu: Khách hiểu đúng vấn đề của chính họ
+    viDu: []
+  P2:
+    ten: Kỹ năng tự làm
+    chuLuc: true
+    mucTieu: Một việc nhỏ khách làm được ngay, an toàn
+    viDu: []
+  P3:
+    ten: Biết cách chọn
+    mucTieu: Tiêu chí đánh giá giải pháp, kể cả của đối thủ
+    viDu: []
+  P4:
+    ten: Hành trình người thật
+    mucTieu: Câu chuyện có thật, có sự đồng ý của nhân vật
+    viDu: []
+
+lanRanhDo:
+  - Không testimonial giả; câu chuyện giả định phải ghi nhãn rõ
+  - Không cam kết kết quả tuyệt đối khi không có bằng chứng
+  - Không dùng hình ảnh, thông tin cá nhân khi chưa có đồng ý
+
+qualifiedLead: "<định nghĩa lead đủ điều kiện của thương hiệu>"
+ctaTheoDoAm:
+  cold: Xem, thử, lưu
+  engaged: Theo dõi chuỗi
+  interested: Đọc tài liệu, tham gia cộng đồng
+  warm: "<hành động chuyển đổi: đặt lịch, đặt hàng, học thử…>"
+
+# ---------- Phần máy đọc: QA trước khi render ----------
+
+# Thiếu trường thì chỉ cảnh báo
+truongBatBuoc: [creativeId, pillar, function]
+truongTheoTruCot:
+  P4: [consentStatus]
+# Trường bắt buộc phải đạt đúng giá trị này; khác đi (dong-y-mieng, chua-co…) thì cảnh báo
+yeuCauGiaTri:
+  consentStatus: [da-ky]
+giaTriHopLe:
+  pillar: [P1, P2, P3, P4]
+  function: [Educate, Inspire]
+
+# muc: chan     → dừng render, trừ khi job có "qaNgoaiLe" do người duyệt ghi
+# muc: canh-bao → vẫn render, ghi vào báo cáo QA cạnh file MP4 để người duyệt soát
+# cum: so khớp theo âm tiết, có dấu, không phân biệt hoa thường
+# mau: biểu thức chính quy chạy trên chữ đã chuẩn hóa (thường, bỏ dấu câu)
+# boQuaKhiTruoc: câu phủ định nếu 5 âm tiết ngay trước (cùng vế câu) có một trong các từ này.
+#   Phủ định thì lỗi "chặn" hạ thành cảnh báo cho người duyệt xem lại, lỗi "cảnh báo" thì bỏ qua.
+tuCam:
+  - muc: chan
+    lyDo: Cam kết kết quả tuyệt đối
+    goiY: Bỏ cam kết; mô tả cụ thể điều đã kiểm chứng
+    cum: [cam kết 100, hiệu quả 100, đảm bảo 100, bảo đảm 100, cam kết hiệu quả]
+
+  - muc: canh-bao
+    lyDo: So sánh tuyệt đối, khó chứng minh
+    goiY: Bỏ hoặc thay bằng mô tả cụ thể có kiểm chứng
+    cum: [tốt nhất, số 1, số một, duy nhất, hàng đầu, rẻ nhất, 100]
+
+  - muc: canh-bao
+    lyDo: Dấu hiệu Before/After
+    goiY: Chỉ dùng khi có thật, có đồng ý và không gây hiểu nhầm
+    cum: [trước và sau, before after]
